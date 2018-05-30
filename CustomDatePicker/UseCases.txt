@@ -1,0 +1,11 @@
+﻿1) User should be able to type the date with separators
+2) User should be able to select any date from the calendar
+3) User should not be allowed to enter any other separator apart from the format specified
+4) User should not be able to enter any alphabets or special characters
+5) The datepicker watermark should change according to the format provided.
+6) The datepicker value should be formatted in the specified format on typing
+7) User should not be allowed to select/enter invalid dates(i.e less that year 1900)
+8) Datepicker should not accept any invalid date(eg:  month 15)
+9) Datepicker should display the date in proper format once the binding property(view model) value has been set.
+10)Once the date format has been set, the date format should be uniform thoughout the application.
+11)When an invalid date format has been provided, the date picker should consider default format

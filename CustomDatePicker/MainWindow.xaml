@@ -1,0 +1,34 @@
+﻿<Window x:Class="CustomDatePicker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CustomDatePicker"
+        mc:Ignorable="d"
+        xmlns:dp="clr-namespace:CustomDatePicker.DatePickerControl"
+        Title="MainWindow" Height="350" Width="525" x:Name="MainWindow1">
+        
+    <!--Reference implementation with datacontext set during compile time-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <dp:DatePickerUC MaxWidth="140" Margin="5,1" 
+                                        Width="180" HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center"
+                                        SelectedDate="{Binding Path=DataContext.DateOfBirth, 
+                                        ElementName=MainWindow1, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Height="25"/>
+
+        <!--This is just a test button to check view model property value once the date is selected-->
+        <Button Content="Submit" Width="50" Height="30" Margin="100,100,100,0" Click="Button_Click"/>
+
+
+        <Label Content="DatePicker with value set from VM" Grid.Row="1"/>
+        <dp:DatePickerUC MaxWidth="140" Margin="5,1" Grid.Row="1"
+                                        Width="180" HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center"
+                                        SelectedDate="{Binding Path=DataContext.DateOfJoining, 
+                                        ElementName=MainWindow1, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Height="25"/>
+    </Grid>
+</Window>
